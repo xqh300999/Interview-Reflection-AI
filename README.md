@@ -45,6 +45,8 @@
 8. `docs/06-question-bank-v0.1.md`：种子问题卡与分类。
 9. `docs/07-requirements-baseline.md`：第一版功能需求、非功能需求和验收目标。
 10. `docs/08-data-model.md`：核心数据结构、状态机、隐私约束和结构化输出协议。
+11. `docs/09-api-and-ai-flow.md`：接口、异步任务、低成本 AI 流程和 ASR 修正策略。
+12. `docs/10-low-fidelity-prototype.md`：页面地图、低保真线框图和主流程验收。
 
 ## 计划目录
 
@@ -61,7 +63,9 @@
 │  ├─ 05-seed-sample-analysis.md
 │  ├─ 06-question-bank-v0.1.md
 │  ├─ 07-requirements-baseline.md
-│  └─ 08-data-model.md
+│  ├─ 08-data-model.md
+│  ├─ 09-api-and-ai-flow.md
+│  └─ 10-low-fidelity-prototype.md
 ├─ assets/
 │  └─ references/
 │     ├─ README.md
@@ -83,4 +87,4 @@
 
 ## 当前状态
 
-项目已经完成第一份真实答辩样本分析、22 张种子问题卡、第一版需求基线和数据模型，尚未开始产品代码实现。下一步是设计 API、低成本 AI 调用流程和低保真原型。
+项目已经完成第一份真实答辩样本分析、22 张种子问题卡、第一版需求基线、数据模型、API 与 AI 流程以及低保真原型，尚未开始产品代码实现。下一步是确定技术方案、目录结构和数据库迁移。

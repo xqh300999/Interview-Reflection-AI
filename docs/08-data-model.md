@@ -23,6 +23,9 @@ erDiagram
     USER ||--o{ DEFENSE_SESSION : owns
     PROJECT_PROFILE ||--o{ DEFENSE_SESSION : describes
     DEFENSE_SESSION ||--o{ TRANSCRIPT_TURN : contains
+    DEFENSE_SESSION ||--o{ MEDIA_ASSET : stores
+    MEDIA_ASSET ||--o{ TRANSCRIPTION_JOB : transcribes
+    TRANSCRIPT_TURN ||--o{ TRANSCRIPT_CORRECTION : corrected_by
     DEFENSE_SESSION ||--o{ QUESTION_GROUP : produces
     QUESTION_GROUP ||--o{ QUESTION : groups
     QUESTION ||--o{ ANSWER : has
@@ -312,6 +315,63 @@ erDiagram
 - `(session_id, created_at)`
 - `(task_type, status)`
 
+### 3.16 MediaAsset
+
+保存音频、视频或反思录音的元数据，实际文件放在私有对象存储。
+
+| 字段 | 类型 | 说明 |
+|---|---|---|
+| id | UUID | 主键 |
+| session_id | UUID | 所属场次，可空 |
+| question_id | UUID | 关联问题，可空 |
+| media_type | varchar(30) | session_audio、reflection_audio、video |
+| storage_key | text | 私有对象存储位置 |
+| mime_type | varchar(100) | 文件类型 |
+| duration_ms | integer | 时长 |
+| file_size | bigint | 文件大小 |
+| checksum | varchar(128) | 文件哈希，用于幂等 |
+| status | varchar(30) | uploaded、processing、ready、failed、deleted |
+| created_at | timestamptz | 创建时间 |
+| deleted_at | timestamptz | 删除时间，可空 |
+
+### 3.17 TranscriptionJob
+
+保存 ASR 任务状态和结果引用。
+
+| 字段 | 类型 | 说明 |
+|---|---|---|
+| id | UUID | 主键 |
+| media_asset_id | UUID | 媒体文件 |
+| provider | varchar(50) | ASR 服务商或本地引擎 |
+| language | varchar(20) | 识别语言 |
+| status | varchar(30) | queued、running、succeeded、failed |
+| progress | numeric(5,4) | 进度 0 到 1 |
+| result_turn_count | integer | 生成的发言数 |
+| error_code | varchar(100) | 错误码，可空 |
+| error_message | text | 错误信息，可空 |
+| started_at | timestamptz | 开始时间 |
+| finished_at | timestamptz | 完成时间 |
+| created_at | timestamptz | 创建时间 |
+
+### 3.18 TranscriptCorrection
+
+保存 AI 或用户对原始转写的修正建议和确认结果。
+
+| 字段 | 类型 | 说明 |
+|---|---|---|
+| id | UUID | 主键 |
+| turn_id | UUID | 原始发言 |
+| source | varchar(30) | asr、ai、user |
+| original_text | text | 原始片段 |
+| suggested_text | text | 建议文本 |
+| reason | text | 修正原因 |
+| confidence | numeric(4,3) | 建议置信度 |
+| semantic_change | boolean | 是否可能改变语义 |
+| status | varchar(30) | pending、accepted、rejected、edited |
+| accepted_by_user | boolean | 用户是否确认 |
+| created_at | timestamptz | 创建时间 |
+| updated_at | timestamptz | 更新时间 |
+
 ## 4. 首版必须建立的表
 
 - `users`，本地模式可使用固定用户。
@@ -328,7 +388,13 @@ erDiagram
 - `review_tasks`
 - `model_usage`
 
-第二版再补充：
+第二版增加录音和 ASR 后补：
+
+- `media_assets`
+- `transcription_jobs`
+- `transcript_corrections`
+
+再后续补充：
 
 - `project_profiles`
 - `evidence_items`
