@@ -15,7 +15,11 @@
 2. `docs/00-project-charter.md`
 3. `docs/02-decision-log.md`
 4. `docs/03-context-handoff.md`
-5. 与当前任务直接相关的文档
+5. `docs/05-seed-sample-analysis.md`
+6. `docs/06-question-bank-v0.1.md`
+7. `docs/07-requirements-baseline.md`
+8. `docs/08-data-model.md`
+9. 与当前任务直接相关的文档
 
 不要主动读取项目根目录之外的其他项目文件，除非用户明确要求。
 
@@ -55,11 +59,18 @@
 
 ## 当前下一步
 
-1. 完成项目章程和初始 backlog。
-2. 收集第一份真实样本：用户自己的软件项目介绍及最担心的评审问题。
-3. 形成用户画像、场景、用户故事和验收标准。
-4. 完成问题卡数据模型和低成本 AI 流水线设计。
-5. 再进入原型和编码。
+1. 评审并确认 `docs/07-requirements-baseline.md`。
+2. 设计 API 接口清单和低成本 AI 调用流程。
+3. 制作导入、问题卡和重答三个页面的低保真原型。
+4. 编写测试策略和种子样本评估脚本。
+5. 完成技术方案后再进入编码。
+
+## 样本和隐私
+
+- 第一份真实样本位于 `assets/references/private/`。
+- `private/` 已在 `.gitignore` 中排除，不得提交到公开仓库。
+- 分析和演示使用脱敏摘要，不复制原始全文到公开文档。
+- 公开演示前必须替换为脱敏或重新编写的模拟样本。
 
 ## 交接要求
 

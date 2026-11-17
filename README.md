@@ -41,6 +41,10 @@
 4. `docs/02-decision-log.md`：关键决策及其原因。
 5. `docs/03-context-handoff.md`：新聊天交接信息和下一步。
 6. `docs/04-initial-backlog.md`：初始需求池和验收方向。
+7. `docs/05-seed-sample-analysis.md`：第一份真实答辩样本分析。
+8. `docs/06-question-bank-v0.1.md`：种子问题卡与分类。
+9. `docs/07-requirements-baseline.md`：第一版功能需求、非功能需求和验收目标。
+10. `docs/08-data-model.md`：核心数据结构、状态机、隐私约束和结构化输出协议。
 
 ## 计划目录
 
@@ -53,7 +57,11 @@
 │  ├─ 01-project-vision-and-competition.md
 │  ├─ 02-decision-log.md
 │  ├─ 03-context-handoff.md
-│  └─ 04-initial-backlog.md
+│  ├─ 04-initial-backlog.md
+│  ├─ 05-seed-sample-analysis.md
+│  ├─ 06-question-bank-v0.1.md
+│  ├─ 07-requirements-baseline.md
+│  └─ 08-data-model.md
 ├─ assets/
 │  └─ references/
 │     ├─ README.md
@@ -75,4 +83,4 @@
 
 ## 当前状态
 
-项目处于文档基线阶段，尚未开始产品代码实现。下一步是用用户自己的软件项目建立第一份真实答辩样本。
+项目已经完成第一份真实答辩样本分析、20 张种子问题卡、第一版需求基线和数据模型，尚未开始产品代码实现。下一步是设计 API、低成本 AI 调用流程和低保真原型。

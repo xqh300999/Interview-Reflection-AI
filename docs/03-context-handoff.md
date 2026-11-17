@@ -26,6 +26,9 @@ docs/02-decision-log.md 和 docs/03-context-handoff.md。
 
 - 已初始化 Git 仓库，默认分支为 `main`。
 - 已完成 Sprint 0 初始提交：`fadfae9 docs: establish sprint 0 project baseline`。
+- 已分析第一份真实答辩样本，形成 20 张种子问题卡。
+- 已完成第一版功能需求、非功能需求和样本验收目标。
+- 已完成问题卡、追问链、回答、缺口、反思、重答、复习和成本记录的数据模型。
 - 确定以复盘为核心，现场辅助后置。
 - 确定首版用户为应届生和在校生。
 - 确定首版场景为学生讲解自己的软件项目。
@@ -35,11 +38,9 @@ docs/02-decision-log.md 和 docs/03-context-handoff.md。
 
 尚未完成：
 
-- 第一份真实项目答辩样本。
-- 用户画像和使用场景验证。
-- 用户故事和验收标准。
 - 问题卡数据模型。
 - 技术架构和接口设计。
+- 低保真原型。
 - 原型、代码和测试。
 
 ## 3. 关键决策摘要
@@ -58,31 +59,24 @@ docs/02-decision-log.md 和 docs/03-context-handoff.md。
 - `docs/01-project-vision-and-competition.md`：产品构想、竞品分析、问题分类和完整方案。
 - `docs/02-decision-log.md`：关键决策。
 - `docs/04-initial-backlog.md`：初始需求池。
+- `docs/05-seed-sample-analysis.md`：真实样本分析。
+- `docs/06-question-bank-v0.1.md`：20 张种子问题卡。
+- `docs/07-requirements-baseline.md`：第一版需求基线和验收标准。
 - `assets/references/private/`：用户提供的老师平台截图，默认不公开。
+- `assets/references/private/seed-defense-transcript-2026-11-15.txt`：真实答辩原始记录，仅本地保存。
 
 ## 5. 当前要解决的问题
 
-项目还没有第一份真实需求样本。下一步需要围绕用户自己的软件项目建立种子问题库。
-
-至少需要：
-
-- 项目一句话介绍。
-- 项目面向的用户和问题。
-- 使用的技术栈。
-- 用户个人负责的部分。
-- 项目最有把握的亮点。
-- 最怕评审追问的 3 个问题。
-- 一次模拟汇报或问答记录。
+项目已经有第一份真实需求样本。接下来需要把样本分析转化为可实现的数据模型和技术方案。
 
 ## 6. 下一步任务
 
-1. 收集用户自己的软件项目资料。
-2. 生成 10 到 20 个项目答辩问题。
-3. 形成首版用户画像和主要使用场景。
-4. 编写 8 到 12 条用户故事。
-5. 为 P0 用户故事写验收标准。
-6. 设计问题卡数据模型和低成本 AI 流水线。
-7. 评审范围后再开始原型和编码。
+1. 评审并确认 `docs/07-requirements-baseline.md` 和 `docs/08-data-model.md`。
+2. 编写 `docs/09-api-and-ai-flow.md`。
+3. 设计低成本 AI 调用预算和失败重试规则。
+4. 制作低保真页面原型。
+5. 编写技术方案和测试策略。
+6. 评审范围后再开始编码。
 
 ## 7. 未决问题
 
@@ -92,6 +86,7 @@ docs/02-decision-log.md 和 docs/03-context-handoff.md。
 - 是否支持本地模型或用户自带 API Key。
 - 开源许可证选择 MIT 还是 Apache-2.0。
 - 模拟实时提示放在第二轮迭代还是更后。
+- 首版是否支持音频文件导入，还是先只支持文字和语音反思。
 
 ## 8. 交接规则
 
