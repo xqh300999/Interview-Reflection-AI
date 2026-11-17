@@ -26,7 +26,7 @@ docs/02-decision-log.md 和 docs/03-context-handoff.md。
 
 - 已初始化 Git 仓库，默认分支为 `main`。
 - 已完成 Sprint 0 初始提交：`fadfae9 docs: establish sprint 0 project baseline`。
-- 已分析第一份真实答辩样本，形成 20 张种子问题卡。
+- 已分析第一份真实答辩样本，形成 22 张种子问题卡。
 - 已完成第一版功能需求、非功能需求和样本验收目标。
 - 已完成问题卡、追问链、回答、缺口、反思、重答、复习和成本记录的数据模型。
 - 确定以复盘为核心，现场辅助后置。
@@ -60,7 +60,7 @@ docs/02-decision-log.md 和 docs/03-context-handoff.md。
 - `docs/02-decision-log.md`：关键决策。
 - `docs/04-initial-backlog.md`：初始需求池。
 - `docs/05-seed-sample-analysis.md`：真实样本分析。
-- `docs/06-question-bank-v0.1.md`：20 张种子问题卡。
+- `docs/06-question-bank-v0.1.md`：22 张种子问题卡。
 - `docs/07-requirements-baseline.md`：第一版需求基线和验收标准。
 - `assets/references/private/`：用户提供的老师平台截图，默认不公开。
 - `assets/references/private/seed-defense-transcript-2026-11-15.txt`：真实答辩原始记录，仅本地保存。
