@@ -24,6 +24,8 @@ docs/02-decision-log.md 和 docs/03-context-handoff.md。
 
 已完成：
 
+- 已初始化 Git 仓库，默认分支为 `main`。
+- 已完成 Sprint 0 初始提交：`fadfae9 docs: establish sprint 0 project baseline`。
 - 确定以复盘为核心，现场辅助后置。
 - 确定首版用户为应届生和在校生。
 - 确定首版场景为学生讲解自己的软件项目。
