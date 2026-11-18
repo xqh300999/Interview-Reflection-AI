@@ -47,6 +47,8 @@
 10. `docs/08-data-model.md`：核心数据结构、状态机、隐私约束和结构化输出协议。
 11. `docs/09-api-and-ai-flow.md`：接口、异步任务、低成本 AI 流程和 ASR 修正策略。
 12. `docs/10-low-fidelity-prototype.md`：页面地图、低保真线框图和主流程验收。
+13. `docs/11-technical-architecture.md`：技术栈、目录结构、任务系统和开发顺序。
+14. `docs/12-git-workflow.md`：本地提交、Git 身份、远程仓库和推送操作。
 
 ## 计划目录
 
@@ -65,7 +67,9 @@
 │  ├─ 07-requirements-baseline.md
 │  ├─ 08-data-model.md
 │  ├─ 09-api-and-ai-flow.md
-│  └─ 10-low-fidelity-prototype.md
+│  ├─ 10-low-fidelity-prototype.md
+│  ├─ 11-technical-architecture.md
+│  └─ 12-git-workflow.md
 ├─ assets/
 │  └─ references/
 │     ├─ README.md
@@ -87,4 +91,4 @@
 
 ## 当前状态
 
-项目已经完成第一份真实答辩样本分析、22 张种子问题卡、第一版需求基线、数据模型、API 与 AI 流程以及低保真原型，尚未开始产品代码实现。下一步是确定技术方案、目录结构和数据库迁移。
+项目已经完成第一份真实答辩样本分析、22 张种子问题卡、需求基线、数据模型、API 与 AI 流程、低保真原型和技术架构，尚未开始产品代码实现。下一步是建立前后端与数据库骨架，并完成文字导入纵向切片。

@@ -31,6 +31,8 @@ docs/02-decision-log.md 和 docs/03-context-handoff.md。
 - 已完成问题卡、追问链、回答、缺口、反思、重答、复习和成本记录的数据模型。
 - 已完成文字导入、录音上传、异步转写、局部修正、问题分析和重答的 API 与 AI 流程。
 - 已完成首页、导入、场次详情、转写校对、问题卡、反思、重答和复习中心的低保真原型。
+- 已完成 Next.js、FastAPI、PostgreSQL、独立 worker 和 Provider 抽象的技术架构。
+- 已记录本地 Git 提交身份、远程仓库状态和 GitHub/Gitee 推送方式。
 - 确定以复盘为核心，现场辅助后置。
 - 确定首版用户为应届生和在校生。
 - 确定首版场景为学生讲解自己的软件项目。
@@ -67,6 +69,8 @@ docs/02-decision-log.md 和 docs/03-context-handoff.md。
 - `docs/08-data-model.md`：核心实体、状态和结构化输出协议。
 - `docs/09-api-and-ai-flow.md`：接口清单、任务状态和 ASR 修正策略。
 - `docs/10-low-fidelity-prototype.md`：页面地图、线框图和交互验收。
+- `docs/11-technical-architecture.md`：技术栈、目录结构、任务系统和开发顺序。
+- `docs/12-git-workflow.md`：Git 操作和远程仓库说明。
 - `assets/references/private/`：用户提供的老师平台截图，默认不公开。
 - `assets/references/private/seed-defense-transcript-2026-11-15.txt`：真实答辩原始记录，仅本地保存。
 
@@ -76,11 +80,11 @@ docs/02-decision-log.md 和 docs/03-context-handoff.md。
 
 ## 6. 下一步任务
 
-1. 评审并确认 `docs/07`、`docs/08` 和 `docs/09`。
-2. 编写 `docs/11-technical-architecture.md`。
-3. 定义目录结构、数据库迁移和 API mock。
-4. 编写测试策略和种子样本评估脚本。
-5. 评审范围后再开始编码。
+1. 建立 `frontend/`、`backend/`、`infra/` 和测试目录骨架。
+2. 编写数据库迁移和 `MockLLMProvider`。
+3. 完成文字导入、问题组提取和问题卡展示的纵向切片。
+4. 增加 `ModelUsage` 和单场成本记录。
+5. 使用种子样本完成第一轮评估。
 
 ## 7. 未决问题
 

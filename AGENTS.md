@@ -21,7 +21,9 @@
 8. `docs/08-data-model.md`
 9. `docs/09-api-and-ai-flow.md`
 10. `docs/10-low-fidelity-prototype.md`
-11. 与当前任务直接相关的文档
+11. `docs/11-technical-architecture.md`
+12. `docs/12-git-workflow.md`
+13. 与当前任务直接相关的文档
 
 不要主动读取项目根目录之外的其他项目文件，除非用户明确要求。
 
@@ -62,10 +64,10 @@
 ## 当前下一步
 
 1. 评审并确认 `docs/07-requirements-baseline.md`。
-2. 编写技术方案、目录结构和数据库迁移方案。
-3. 编写测试策略和种子样本评估脚本。
-4. 建立最小前端、后端和数据库骨架。
-5. 先完成文字导入到问题卡生成的纵向切片。
+2. 建立最小前后端、Docker 和数据库骨架。
+3. 创建数据库迁移和 MockLLMProvider。
+4. 完成文字导入到问题卡生成的纵向切片。
+5. 增加模型调用记录和种子样本评估。
 
 ## 样本和隐私
 

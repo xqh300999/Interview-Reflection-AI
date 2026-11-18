@@ -24,7 +24,8 @@ erDiagram
     PROJECT_PROFILE ||--o{ DEFENSE_SESSION : describes
     DEFENSE_SESSION ||--o{ TRANSCRIPT_TURN : contains
     DEFENSE_SESSION ||--o{ MEDIA_ASSET : stores
-    MEDIA_ASSET ||--o{ TRANSCRIPTION_JOB : transcribes
+    DEFENSE_SESSION ||--o{ PROCESSING_JOB : processes
+    MEDIA_ASSET ||--o{ PROCESSING_JOB : transcribes
     TRANSCRIPT_TURN ||--o{ TRANSCRIPT_CORRECTION : corrected_by
     DEFENSE_SESSION ||--o{ QUESTION_GROUP : produces
     QUESTION_GROUP ||--o{ QUESTION : groups
@@ -334,24 +335,33 @@ erDiagram
 | created_at | timestamptz | 创建时间 |
 | deleted_at | timestamptz | 删除时间，可空 |
 
-### 3.17 TranscriptionJob
+### 3.17 ProcessingJob
 
-保存 ASR 任务状态和结果引用。
+保存转写、问题提取、问题分析和导出等异步任务状态。
 
 | 字段 | 类型 | 说明 |
 |---|---|---|
 | id | UUID | 主键 |
-| media_asset_id | UUID | 媒体文件 |
-| provider | varchar(50) | ASR 服务商或本地引擎 |
-| language | varchar(20) | 识别语言 |
+| session_id | UUID | 所属场次，可空 |
+| job_type | varchar(50) | transcription、question_extraction、question_analysis、summary、export |
+| target_type | varchar(50) | media_asset、session、question 等 |
+| target_id | UUID | 目标实体 |
+| provider | varchar(50) | ASR 或模型服务商，可空 |
+| input_version | integer | 输入数据版本 |
+| idempotency_key | varchar(200) | 幂等键 |
 | status | varchar(30) | queued、running、succeeded、failed |
 | progress | numeric(5,4) | 进度 0 到 1 |
-| result_turn_count | integer | 生成的发言数 |
+| attempt_count | integer | 已尝试次数 |
+| result_payload | jsonb | 结果引用和阶段摘要 |
 | error_code | varchar(100) | 错误码，可空 |
 | error_message | text | 错误信息，可空 |
 | started_at | timestamptz | 开始时间 |
 | finished_at | timestamptz | 完成时间 |
 | created_at | timestamptz | 创建时间 |
+
+唯一约束：
+
+- `idempotency_key` 唯一。
 
 ### 3.18 TranscriptCorrection
 
@@ -387,11 +397,11 @@ erDiagram
 - `retry_answers`
 - `review_tasks`
 - `model_usage`
+- `processing_jobs`
 
 第二版增加录音和 ASR 后补：
 
 - `media_assets`
-- `transcription_jobs`
 - `transcript_corrections`
 
 再后续补充：

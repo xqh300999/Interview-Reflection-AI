@@ -150,7 +150,22 @@
   - ASR 可能出现技术术语、同音词、数字和角色识别错误。
   - 整段重写会破坏原始证据，导致后续分析和复盘失真。
 - 影响：
-  - 数据模型增加 `MediaAsset`、`TranscriptionJob` 和 `TranscriptCorrection`。
+  - 数据模型增加 `MediaAsset`、`ProcessingJob` 和 `TranscriptCorrection`。
   - 原始转写与修正建议分开保存。
   - AI 修正必须显示原文、建议、原因、置信度和是否改变语义。
   - 实时语音仍然后置。
+
+## D012：首版采用模块化单体和 PostgreSQL 任务表
+
+- 日期：2026-11-18
+- 状态：接受
+- 决策：首版使用 Next.js、FastAPI、PostgreSQL、独立 Python worker 和本地文件存储，不引入微服务、Redis、Celery 或 Kubernetes。
+- 原因：
+  - 单人开发需要降低部署和调试成本。
+  - 当前业务模型仍在验证，过早拆分服务会放大变更成本。
+  - PostgreSQL 任务表足够支持首版异步转写和分析任务。
+- 影响：
+  - 使用通用 `ProcessingJob` 管理任务。
+  - 模型和存储通过 Provider 接口抽象，保留后续替换能力。
+  - 目录采用 `frontend/`、`backend/`、`infra/` 的简单结构。
+  - 不建立复杂 monorepo 工具链。
