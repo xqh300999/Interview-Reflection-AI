@@ -33,6 +33,7 @@ docs/02-decision-log.md 和 docs/03-context-handoff.md。
 - 已完成首页、导入、场次详情、转写校对、问题卡、反思、重答和复习中心的低保真原型。
 - 已完成 Next.js、FastAPI、PostgreSQL、独立 worker 和 Provider 抽象的技术架构。
 - 已记录本地 Git 提交身份、远程仓库状态和 GitHub/Gitee 推送方式。
+- 已增加正式 Git 流程文件：贡献规范、变更记录、PR 模板、Issue 模板和换行规范。
 - 确定以复盘为核心，现场辅助后置。
 - 确定首版用户为应届生和在校生。
 - 确定首版场景为学生讲解自己的软件项目。
@@ -71,6 +72,8 @@ docs/02-decision-log.md 和 docs/03-context-handoff.md。
 - `docs/10-low-fidelity-prototype.md`：页面地图、线框图和交互验收。
 - `docs/11-technical-architecture.md`：技术栈、目录结构、任务系统和开发顺序。
 - `docs/12-git-workflow.md`：Git 操作和远程仓库说明。
+- `CONTRIBUTING.md`：正式协作和提交规范。
+- `CHANGELOG.md`：版本变更记录。
 - `assets/references/private/`：用户提供的老师平台截图，默认不公开。
 - `assets/references/private/seed-defense-transcript-2026-11-15.txt`：真实答辩原始记录，仅本地保存。
 

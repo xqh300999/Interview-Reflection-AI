@@ -198,3 +198,51 @@ git config user.email "<你的 GitHub noreply 邮箱>"
 - `fix/<问题名>`：修复。
 
 小改动可以直接在 `main` 提交；较大功能使用短分支，完成后合并。
+
+## 10. 正式化仓库配置
+
+当前仓库已增加：
+
+- `CONTRIBUTING.md`：分支、提交、PR 和隐私规范。
+- `CHANGELOG.md`：版本变更记录。
+- `.gitattributes`：统一换行和二进制文件处理。
+- `.github/PULL_REQUEST_TEMPLATE.md`：Pull Request 自查模板。
+- `.github/ISSUE_TEMPLATE/`：功能和缺陷 Issue 模板。
+
+远程仓库创建后，建议在 GitHub 或 Gitee 中配置：
+
+### 分支保护
+
+- 保护 `main`。
+- 禁止直接删除 `main`。
+- 重要功能通过 Pull Request 合并。
+- 单人开发也要求自审 PR 清单。
+- 如果平台支持，启用线性历史或 squash merge。
+
+### Issue 和里程碑
+
+- 每个功能先建 Issue。
+- 用 `feature`、`bug`、`docs`、`test`、`security` 标签分类。
+- 用 Milestone 管理 `Sprint 1`、`Sprint 2` 和 `v0.1.0`。
+
+### 发布
+
+- `v0.1.0` 对应文字导入和问题卡闭环。
+- `v0.2.0` 对应语音反思、重答和复习。
+- `v0.3.0` 对应录音上传和 ASR 修正。
+- 每次发布写 Release Notes，并更新 `CHANGELOG.md`。
+
+### 单人开发的最小正式流程
+
+```text
+创建 Issue
+→ 切出 feat 或 docs 分支
+→ 提交
+→ 推送分支
+→ 创建 Pull Request
+→ 按模板自查
+→ 合并到 main
+→ 删除分支
+```
+
+这套流程不会显著增加时间，却能让老师看到需求、实现和验证之间的对应关系。
