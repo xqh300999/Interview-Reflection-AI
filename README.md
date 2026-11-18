@@ -50,6 +50,12 @@
 13. `docs/11-technical-architecture.md`：技术栈、目录结构、任务系统和开发顺序。
 14. `docs/12-git-workflow.md`：本地提交、Git 身份、远程仓库和推送操作。
 
+## 工程规范
+
+- [CONTRIBUTING.md](CONTRIBUTING.md)：分支、提交、PR 和隐私规范。
+- [CHANGELOG.md](CHANGELOG.md)：版本变更记录。
+- [.gitattributes](.gitattributes)：换行和二进制文件规则。
+
 ## 计划目录
 
 ```text
