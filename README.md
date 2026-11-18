@@ -4,6 +4,8 @@
 > 当前阶段：Sprint 0，立项与需求基线  
 > 执行方式：单人开发、两周 MVP
 
+GitHub：https://github.com/xqh300999/Interview-Reflection-AI
+
 ## 一句话定位
 
 把真实面试或项目答辩中的问题、追问和回答，整理成可以反思、重答和长期复习的个人问题资产。
