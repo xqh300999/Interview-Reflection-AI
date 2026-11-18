@@ -3,7 +3,8 @@
 - 日期：2026-11-18
 - 项目目录：`X:\软件工程-ai面试`
 - 当前分支：`main`
-- 当前状态：只有本地 Git 仓库，没有远程仓库，没有执行过 `git push`
+- 远程仓库：`https://github.com/xqh300999/Interview-Reflection-AI.git`
+- 当前状态：本地 `main` 已推送到 GitHub，远程分支为 `origin/main`
 
 ## 1. 当前提交身份
 
@@ -13,7 +14,7 @@
 C:\Users\zhong\.gitconfig
 ```
 
-当前提交作者信息：
+全局配置中的历史提交身份：
 
 ```text
 user.name  = 300999
@@ -22,10 +23,18 @@ user.email = 14987046+xu-qihui300999@user.noreply.gitee.com
 
 这说明：
 
-- 提交记录的作者名是 `300999`。
-- 提交记录使用的是一个 Gitee noreply 邮箱。
-- 这只是提交身份，不代表已经登录某个代码托管账户。
-- 没有远程仓库，因此提交没有上传到 GitHub、Gitee 或其他网站。
+- 初始提交的作者名是 `300999`。
+- 初始提交使用的是一个 Gitee noreply 邮箱。
+- 项目已经创建 GitHub 远程仓库并完成首次推送。
+- 为了让后续提交关联 GitHub 账号，本仓库增加了本地覆盖配置：
+
+```text
+user.name  = xqh300999
+user.email = 294081472+xqh300999@users.noreply.github.com
+```
+
+- 本地配置只影响当前仓库之后的提交。
+- 历史提交不会重写，仍保留原来的 Gitee 邮箱。
 
 ## 2. Commit 和 Push 的区别
 
@@ -42,8 +51,9 @@ user.email = 14987046+xu-qihui300999@user.noreply.gitee.com
 当前情况：
 
 - 已执行多次 `git commit`。
-- 没有配置 `origin`。
-- 没有执行 `git push`。
+- 已配置 `origin`。
+- 已完成首次 `git push -u origin main`。
+- 本地 `main` 与 `origin/main` 指向同一个提交。
 
 ## 3. 你自己应该去哪里操作
 
