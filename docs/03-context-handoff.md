@@ -34,6 +34,10 @@ docs/02-decision-log.md 和 docs/03-context-handoff.md。
 - 已完成 Next.js、FastAPI、PostgreSQL、独立 worker 和 Provider 抽象的技术架构。
 - 已记录本地 Git 提交身份、远程仓库状态和 GitHub/Gitee 推送方式。
 - 已增加正式 Git 流程文件：贡献规范、变更记录、PR 模板、Issue 模板和换行规范。
+- 已在 `feat/project-scaffold` 分支建立 Next.js 前端和 FastAPI 后端。
+- 已完成 API 健康检查、开发环境 CORS 和前端系统状态展示。
+- 已完成文字问答预览接口，能识别角色、发言数和疑似问题数。
+- 已用真实种子样本验证文字预览；由于原文件包含重复的发言记录和问答记录，当前识别为约 140 条发言、42 个疑似问题，后续必须加入去重。
 - 确定以复盘为核心，现场辅助后置。
 - 确定首版用户为应届生和在校生。
 - 确定首版场景为学生讲解自己的软件项目。
@@ -44,9 +48,10 @@ docs/02-decision-log.md 和 docs/03-context-handoff.md。
 尚未完成：
 
 - 问题卡数据模型。
-- 技术架构和接口设计。
-- 低保真原型。
-- 原型、代码和测试。
+- 数据库迁移和持久化。
+- MockLLM 问题组提取。
+- 问题卡列表和详情。
+- 语音反思、重答和复习。
 
 ## 3. 关键决策摘要
 
@@ -74,6 +79,9 @@ docs/02-decision-log.md 和 docs/03-context-handoff.md。
 - `docs/12-git-workflow.md`：Git 操作和远程仓库说明。
 - `CONTRIBUTING.md`：正式协作和提交规范。
 - `CHANGELOG.md`：版本变更记录。
+- `frontend/`：Next.js Web 应用。
+- `backend/`：FastAPI API 和测试。
+- `infra/docker-compose.yml`：PostgreSQL、API 和 Web 的容器配置。
 - `assets/references/private/`：用户提供的老师平台截图，默认不公开。
 - `assets/references/private/seed-defense-transcript-2026-11-15.txt`：真实答辩原始记录，仅本地保存。
 
@@ -83,11 +91,12 @@ docs/02-decision-log.md 和 docs/03-context-handoff.md。
 
 ## 6. 下一步任务
 
-1. 建立 `frontend/`、`backend/`、`infra/` 和测试目录骨架。
-2. 编写数据库迁移和 `MockLLMProvider`。
-3. 完成文字导入、问题组提取和问题卡展示的纵向切片。
-4. 增加 `ModelUsage` 和单场成本记录。
-5. 使用种子样本完成第一轮评估。
+1. 在 `feat/project-scaffold` 上提交并推送当前骨架。
+2. 创建 Pull Request，关联 Issue #1。
+3. 设计重复发言和重复问题的去重规则。
+4. 编写数据库迁移和 `MockLLMProvider`。
+5. 完成问题组提取和问题卡展示。
+6. 增加 `ModelUsage` 和单场成本记录。
 
 ## 7. 未决问题
 

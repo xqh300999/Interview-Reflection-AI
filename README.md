@@ -99,4 +99,37 @@ GitHub：https://github.com/xqh300999/Interview-Reflection-AI
 
 ## 当前状态
 
-项目已经完成第一份真实答辩样本分析、22 张种子问题卡、需求基线、数据模型、API 与 AI 流程、低保真原型和技术架构，尚未开始产品代码实现。下一步是建立前后端与数据库骨架，并完成文字导入纵向切片。
+项目已经完成第一份真实答辩样本分析、22 张种子问题卡、需求基线、数据模型、API 与 AI 流程、低保真原型和技术架构。
+
+当前 Sprint 1 已建立可运行骨架：
+
+- Next.js 前端。
+- FastAPI 后端。
+- 健康检查接口。
+- 文字问答角色识别和预览接口。
+- PostgreSQL 配置和 Docker Compose。
+
+## 本地运行
+
+后端：
+
+```powershell
+cd backend
+python -m venv .venv
+.\.venv\Scripts\python -m pip install -e ".[dev]"
+.\.venv\Scripts\python -m uvicorn app.main:app --reload
+```
+
+前端：
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+
+地址：
+
+- Web: http://127.0.0.1:3000
+- API: http://127.0.0.1:8000
+- API 文档: http://127.0.0.1:8000/docs
